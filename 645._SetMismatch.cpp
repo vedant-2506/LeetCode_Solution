@@ -42,9 +42,9 @@ int main(){
 
     vector<int>heights={1,2,3,3,5, 6,7};
 
-    solution sol;
+    Solution sol;
     vector<int>result= sol.findErrorNums(heights);
-    cout<<"Repeating Number: "<<result[0]<<endl;
-    cout<<"Missing Number: "<<result[1]<<endl;
+    cout<<"["<<result[0]<<" , "<< result[1]<<"]"<<endl;
+    
     return 0;
 }
