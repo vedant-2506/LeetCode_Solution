@@ -29,7 +29,7 @@ public:
 int main(){
     cout<<"Smaller than the current number"<<endl;
 
-    vector<int>nums={8,1,2,2,3};
+    vector<int>nums={6,5,4,8};
 
     Solution sol;
     vector<int>result;
