@@ -26,6 +26,7 @@ int main(){
     vector<vector<int>> matrix = {{1,2,3,4},
                                   {5,1,2,3},
                                   {9,5,1,2}};
+
     cout << s.isToeplitzMatrix(matrix) << endl; // Output: 1 (true)
     return 0;
 }
