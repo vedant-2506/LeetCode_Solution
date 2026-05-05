@@ -33,6 +33,6 @@ public:
 
 int main(){
     Solution s;
-    string str = "([[]))]";
+    string str = "([]:ff:))]";
     cout<<s.isValid(str)<<endl;
 }
