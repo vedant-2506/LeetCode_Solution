@@ -2,24 +2,25 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
+
 using namespace std;
 
 class Solution {
 public:
     int findMaxConsecutiveOnes(vector<int>& nums) {
-        int ans = 0, cnt = 0;
-
-        for(int i = 0; i < nums.size(); i++){
-            if(nums[i] == 1){
-                cnt++;
+        
+        //2nd using 1 loop TC=O(n) Sc=O(1)
+        int count=0 , maxC=0;
+        for(int i=0; i<nums.size(); i++){
+            if(nums[i] ==1){
+            count++;
+            maxC = max(maxC , count);
             }
-            else{
-                cnt = 0;
-            }
-            ans = max(ans, cnt);  // ✅ max() instead of fmax()
+            else
+              count=0;
         }
-
-        return ans;
+        return maxC;
+        
     }
 };
 
