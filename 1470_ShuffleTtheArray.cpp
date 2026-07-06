@@ -12,10 +12,8 @@ public:
         // vector<int>ans(sz);
         // int ans_i=0;
         // for(int i=0; i<n ;i++){
-
         //     ans[ans_i]   = nums[i];
         //     ans[ans_i+1] = nums[i+n];
-
         //     ans_i +=2;
         // }
         // return ans;
