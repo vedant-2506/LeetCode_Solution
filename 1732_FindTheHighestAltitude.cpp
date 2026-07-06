@@ -1,21 +1,34 @@
 #include<iostream>
 #include<vector>
+
 using namespace std;
 
 class Solution {
 public:
     int largestAltitude(vector<int>& gain) {
         
-        int sz= gain.size();
-        int ans=0,sum=0;
-
-        for(int i =0; i<sz;i++){
-            
-            sum +=gain[i];
-            ans= max(sum ,ans);
+        //using 2 loop TC=O(n^2) SC=O(1)
+        int maxAlt=0;
+        for(int i=0; i<gain.size(); i++){
+            int alt=0;
+            for(int j=0; j<=i; j++){
+                alt+=gain[j];
+            }
+            maxAlt = max(maxAlt , alt);
         }
+        return maxAlt;
+        
+        
+        // //Prifix sum TC=O(n) SC=O(1)
+        // int maxAltitude =0;
+        // int altitude=0;
+        // for(int i=0; i<gain.size(); i++){
+        //     altitude += gain[i];
+        //     maxAltitude = max(maxAltitude , altitude);
+        // }
+        // return maxAltitude;
 
-        return ans;
+
     }
 };
 
