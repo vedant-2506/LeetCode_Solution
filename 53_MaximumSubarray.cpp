@@ -2,7 +2,6 @@
 #include<vector>
 
 using namespace std;
-
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
@@ -19,6 +18,7 @@ public:
         // } 
         // return maxSum;
 
+        //Kadane's Algorithm TC=(n) SC=O(1)
         int sz=nums.size();
         if(sz==1) return nums[0];
         int sum = nums[0] , maxSum = nums[0] ;
@@ -30,10 +30,26 @@ public:
     }
 };
 
-int main(){
+int main() {
+
+    int n;
+
+    cout << "Enter the size of the array: ";
+    cin >> n;
+
+    vector<int> nums(n);
+
+    cout << "Enter " << n << " integer elements:" << endl;
+    for(int i = 0; i < n; i++) {
+        cout << "Element " << i + 1 << ": ";
+        cin >> nums[i];
+    }
+
     Solution s;
-    vector<int>nums = {-2,1,-3,4,-1,2,1,-5,4};
+
     int ans = s.maxSubArray(nums);
-    cout<<ans<<endl; 
+
+    cout << "\nMaximum Subarray Sum: " << ans << endl;
+
     return 0;
 }
