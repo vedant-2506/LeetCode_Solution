@@ -3,31 +3,36 @@
 
 using namespace std;
 
-cclass Solution {
+class Solution {
 public:
-    vector<vector<int>> generate(int numRows) {
+    vector<int> getRow(int rowIndex) {
 
-        //TC=O(n^2) SC=O(n^2)
-        vector<vector<int>>Triangle;
-        
+        // TC = O(rowIndex^2), SC = O(rowIndex^2)
+
+        vector<vector<int>> Triangle;
+
         Triangle.push_back({1});
-        if( numRows == 1)return  Triangle;
-        
-        Triangle.push_back({1,1});
-        if( numRows == 2)return  Triangle;
+        if (rowIndex == 0) return Triangle[0];
 
-        for(int r=2; r<numRows; r++){
-            vector<int>miniTri;
+        Triangle.push_back({1, 1});
+        if (rowIndex == 1) return Triangle[1];
+
+        for (int r = 2; r <= rowIndex; r++) {
+            vector<int> miniTri;
             miniTri.push_back(1);
-            for(int i=0; i<Triangle[r-1].size()-1; i++){
-                int a = Triangle[r-1][i];
-                int b = Triangle[r-1][i+1];
-                miniTri.push_back(a+b);
+
+            for (int i = 0; i < Triangle[r - 1].size() - 1; i++) {
+                int a = Triangle[r - 1][i];
+                int b = Triangle[r - 1][i + 1];
+
+                miniTri.push_back(a + b);
             }
+
             miniTri.push_back(1);
             Triangle.push_back(miniTri);
         }
-        return  Triangle;
+
+        return Triangle[rowIndex];
     }
 };
 
